@@ -19,6 +19,10 @@ $(document).ready(function(){
             }
         })
     });
+    $(document).ready(function() {
+        // Gọi hàm showComments để hiển thị các comment
+        showComments();
+    });
 });
 function showComments() {
     $.ajax({
