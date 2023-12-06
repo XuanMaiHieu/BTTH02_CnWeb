@@ -1,5 +1,9 @@
 <?php
+    global $pdo;
+global $comment;
 
+    include 'db_connect.php';
+    
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,7 +31,24 @@
             <input type="submit" name="submit" id="submit" class="btn btn-primary" value="Post Comment" />
         </div>
     </form>
-    <div id="showComments"></div>
+    <div id="showComments">
+    <?php
+    // Thực hiện truy vấn để lấy dữ liệu bình luận từ cơ sở dữ liệu
+    $commentQuery = "SELECT id, `comment`, `sender`, `date` FROM `comment`";
+    $commentsResult = $pdo->query($commentQuery);
+    while ($comment = $commentsResult->fetch(PDO::FETCH_ASSOC)) {
+        echo '
+            <div class="panel panel-primary">
+                <div class="panel-heading">By <b>' . $comment["sender"] . '</b> on <i>' . $comment["date"] . '</i></div>
+                <div class="panel-body">' . $comment["comment"] . '</div>
+                <div class="panel-footer" align="right">
+                    <button type="button" class="btn btn-primary reply" id="' . $comment["id"] . '">Reply</button>
+                </div>
+            </div>';
+            }
+    ?>
+	</div> ';
+       
 </div>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
