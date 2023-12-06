@@ -8,9 +8,8 @@ $pass = '1';
 $charset = 'utf8mb4';
 $dsn = "mysql:host=$host;dbname=$db";
 
+
 // Thực hiện kết nối
-
-
 try {
     $pdo = new PDO($dsn, $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
