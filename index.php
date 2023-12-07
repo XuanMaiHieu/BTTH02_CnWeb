@@ -1,6 +1,31 @@
 <?php
+//$host = 'localhost';
+//$db = 'btth02_1';
+//$user = 'root';
+//$pass = '123';
+//$charset = 'utf8mb4';
+//
+//$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+//
+//try {
+//    $pdo = new PDO($dsn, $user, $pass);
+//    echo "thanh cong";
+////    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//} catch (\PDOException $e) {
+//    echo $e->getMessage();
+//}
+//$sql1 = "SELECT * from comment";
+//$a = $pdo->prepare($sql1);
+//$a->execute();
+//$user = $a->fetchAll();
+//
+//
+//echo "<pre>";
+//print_r($user);
+//echo "</pre>";
+//?>
 
-?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,7 +52,9 @@
             <input type="submit" name="submit" id="submit" class="btn btn-primary" value="Post Comment" />
         </div>
     </form>
-    <div id="showComments"></div>
+    <div>comment detail
+        <div id="showComments"></div></div>
+
 </div>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

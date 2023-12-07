@@ -9,3 +9,14 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE `comment`
 ADD PRIMARY KEY (`id`);
+
+
+SELECT * FROM COMMENT
+
+
+INSERT INTO comment (id, parent_id, comment, sender)
+VALUES
+(1, 0, 'This is a top-level comment', 'User1'),
+(2, 1, 'Reply to comment 1', 'User2'),
+(3, 0, 'Another top-level comment', 'User3'),
+(4, 2, 'Reply to comment 2', 'User4');
