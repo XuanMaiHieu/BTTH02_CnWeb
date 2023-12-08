@@ -4,7 +4,7 @@ global $pdo;
 $host = 'localhost';
 $db = 'BTTH02_1';
 $user = 'root';
-$pass = '1'; 
+$pass = '123';
 $charset = 'utf8mb4';
 $dsn = "mysql:host=$host;dbname=$db";
 
